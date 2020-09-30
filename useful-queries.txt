@@ -5,3 +5,15 @@ SELECT max(e1.sal), e1.deptno FROM s_emp e1 WHERE sal < (SELECT max(sal) FROM s_
 Select Employee_No,Employee_Name 
 from Employee_Master
 where Salary=(Select max(Salary) from Employee_Master);
+
+#What is an SQL query for fetching the unique values of the column DEPARTMENT from the WORKER table?
+Select distinct DEPARTMENT from Worker;
+
+Select * from Worker where year(JOINING_DATE) = 2014 and month(JOINING_DATE) = 2;
+
+#Write an SQL Query for fetching the details of duplicate records in some fields.
+SELECT WORKER_TITLE, AFFECTED_FROM, COUNT(*)
+FROM Title
+GROUP BY WORKER_TITLE, AFFECTED_FROM
+HAVING COUNT(*) > 1;
+
