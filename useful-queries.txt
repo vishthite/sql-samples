@@ -1,3 +1,7 @@
 #Write a query to find second highest salary of Employee.
-
 SELECT max(e1.sal), e1.deptno FROM s_emp e1 WHERE sal < (SELECT max(sal) FROM s_emp e2 WHERE e2.deptno = e1.deptno) GROUP BY e1.deptno;
+
+#This is also called as single row subquery in which we need to use the aggregate function.
+Select Employee_No,Employee_Name 
+from Employee_Master
+where Salary=(Select max(Salary) from Employee_Master);
